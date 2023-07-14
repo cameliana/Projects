@@ -1,0 +1,40 @@
+// Code was created using CodePen. Outputs a character based on the number selected.
+//This is a code using functions, arrays, for loop, if statement
+console.log("Hi there! Sailor Moon, was originally released in Japan as Pretty Soldier Sailor Moon, is a Japanese superhero anime television series produced by Toei Animation using Super Sentai motifs.")
+
+// Sailor Moon characters list
+let sailorMoonCharacters = [
+    { name: "Sailor Moon", description: ", the main protagonist and the leader of the Sailor Guardians." },
+    { name: "Sailor Mercury", description: ", guardian of water and intelligence." },
+    { name: "Sailor Mars", description: ", the guardian of fire and passion." },
+    { name: "Sailor Jupiter",
+     description: ", the guardian of thunder and strength. A bit like Thor!" }
+  ];
+  
+//Adding character
+  function addCharacter(name, description) {
+  let newCharacter = { name: name, description: description };
+  sailorMoonCharacters.push(newCharacter);
+  console.log("New Sailor Moon character added.");
+}
+addCharacter("Sailor Venus", "You are the guardian of love and beauty.");
+
+//Function choosing a character
+  function chooseCharacter() {
+    console.log("In this code you`ll find out which Sailor Moon character you are!");
+  
+    for (let i = 0; i < sailorMoonCharacters.length; i++) {
+      console.log(i + 1 + ". " + sailorMoonCharacters[i].name);
+    }
+  
+    let choice = prompt("Enter a number of your choice (1-5):");
+  
+    if (choice >= 1 && choice <= sailorMoonCharacters.length) {
+      let selectedCharacter = sailorMoonCharacters[choice - 1];
+      console.log("You are " + selectedCharacter.name + selectedCharacter.description);
+    } else {
+      console.log("Invalid choice. Please try again.");
+    }
+  }
+  
+  chooseCharacter();
